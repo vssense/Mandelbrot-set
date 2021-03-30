@@ -8,4 +8,4 @@ bin/sdl.o : sdl.cpp sdl.h
 	g++ -c sdl.cpp $(options) -o bin/sdl.o
 
 bin/main.o : main.cpp sdl.h
-	g++ -c main.cpp $(options) -o bin/main.o
+	g++ -c main.cpp -mavx $(options) -o bin/main.o
