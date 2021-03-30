@@ -5,8 +5,8 @@
 #include <time.h>
 #include <SDL2/SDL.h>
 
-static const int x_size = 1200;
-static const int y_size = 800;
+static const int x_size = 768;
+static const int y_size = 512;
 static const int x_top_left_corner = 1920 / 2 - x_size / 2;
 static const int y_top_left_corner = 1080 / 2 - y_size / 2;
 static const int title_size = 10;

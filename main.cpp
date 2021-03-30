@@ -142,8 +142,8 @@ int main()
         clock_t start_time = clock();
 
         DrawFrame(&info, &screen);
-        
         UpdateWindow(&info);
+        
         clock_t end_time = clock();
         SetFPS(&info, int(CLOCKS_PER_SEC / (end_time + 0.0 - start_time)));
 
