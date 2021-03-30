@@ -14,12 +14,12 @@ uint32_t Color(unsigned char red, unsigned char green, unsigned char black, unsi
 
 uint32_t Color(unsigned char red, unsigned char green, unsigned char black)
 {
-	return Color(red, green, black, 0);
+    return Color(red, green, black, 0);
 }
 
 void InitWindow(WindowInfo* info)
 {
-	assert(info);
+    assert(info);
 
     assert(SDL_Init(SDL_INIT_VIDEO) ==  0 && "Can't initialize SDL\n");
     
@@ -33,37 +33,37 @@ void InitWindow(WindowInfo* info)
 
 void SetPixel(WindowInfo* info, int x, int y, uint32_t pixel)
 {
-	assert(info);
-	assert(x >= 0);
-	assert(y >= 0);
+    assert(info);
+    assert(x >= 0);
+    assert(y >= 0);
 
-	uint32_t* target_pixel = (uint32_t*)((uint8_t*)info->surface->pixels + y * info->surface->pitch +
-		                                                                   x * info->surface->format->BytesPerPixel);
-	*target_pixel = pixel;
+    uint32_t* target_pixel = (uint32_t*)((uint8_t*)info->surface->pixels + y * info->surface->pitch +
+                                                                           x * info->surface->format->BytesPerPixel);
+    *target_pixel = pixel;
 }
 
 void UpdateWindow(WindowInfo* info)
 {
-	assert(info);
+    assert(info);
 
-	SDL_UpdateWindowSurface(info->window);
+    SDL_UpdateWindowSurface(info->window);
 }
 
 void MakeWindow(WindowInfo* info)
 {
-	assert(info);
-	InitWindow(info);
+    assert(info);
+    InitWindow(info);
 
-	info->surface = SDL_GetWindowSurface(info->window); //!!! Amask(last param mb 255)
-	assert(info->surface && "Can't create RGB surface\n");
+    info->surface = SDL_GetWindowSurface(info->window); //!!! Amask(last param mb 255)
+    assert(info->surface && "Can't create RGB surface\n");
 }
 
 void SetFPS(WindowInfo* info, int fps)
 {
-	static char title[title_size] = "";
+    static char title[title_size] = "";
 
-	snprintf(title, title_size, "FPS %d", fps);
-	SDL_SetWindowTitle(info->window, title);
+    snprintf(title, title_size, "FPS %d", fps);
+    SDL_SetWindowTitle(info->window, title);
 }
 
 void DestroyWindow(WindowInfo* info)
