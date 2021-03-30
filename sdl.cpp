@@ -54,8 +54,8 @@ void MakeWindow(WindowInfo* info)
     assert(info);
     InitWindow(info);
 
-    info->surface = SDL_GetWindowSurface(info->window); //!!! Amask(last param mb 255)
-    assert(info->surface && "Can't create RGB surface\n");
+    info->surface = SDL_GetWindowSurface(info->window);         //!!! Amask(last param mb 255)
+    assert(info->surface && "Can't get window surface\n");
 }
 
 void SetFPS(WindowInfo* info, int fps)
